@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seasonal Climate - NASA Bloom Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Seasonal Climate</h1>
+    <p>Climate data by seasons (2024)</p>
+    <nav>
+      <a href="index.html">Return to Tracker</a>
+      <a href="scientific-data.html">Scientific Data</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="climateForm">
+      <h3>Select Location and Season</h3>
+      <button id="scientificBtn">Scientific Data</button>
+      <select id="locationSelector">
+        <option value="" disabled selected>Select a location</option>
+        <option value="Kyiv, Ukraine">Kyiv, Ukraine</option>
+        <option value="London, UK">London, UK</option>
+        <option value="New York, USA">New York, USA</option>
+        <option value="Tokyo, Japan">Tokyo, Japan</option>
+        <option value="Sydney, Australia">Sydney, Australia</option>
+        <option value="Cairo, Egypt">Cairo, Egypt</option>
+      </select>
+      <select id="seasonSelector">
+        <option value="winter">Winter (Jan-Feb)</option>
+        <option value="spring">Spring (Mar-May)</option>
+        <option value="summer">Summer (Jun-Aug)</option>
+        <option value="autumn">Autumn (Sep-Oct)</option>
+      </select>
+      <button id="fetchClimateBtn">Show Climate</button>
+      <div id="apiStatus"></div>
+    </div>
+
+    <div id="climateData">
+      <!-- Table with data will appear here -->
+    </div>
+  </main>
+
+  <footer>
+    <p>Data: NASA POWER (demo)</p>
+  </footer>
+
+  <script src="bloom-maps.js"></script>
+</body>
+</html>
