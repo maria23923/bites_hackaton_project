@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Data - NASA Bloom Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Scientific Data</h1>
+    <p>Pollination plants by region (for researchers and students)</p>
+    <nav>
+      <a href="bloom-maps.html">Return to Seasonal Climate</a>
+      <a href="index.html">Return to Tracker</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="scientificForm">
+      <h3>Select a Location</h3>
+      <select id="locationSelector">
+        <option value="" disabled selected>Select a location</option>
+        <option value="Kyiv, Ukraine">Kyiv, Ukraine</option>
+        <option value="London, UK">London, UK</option>
+        <option value="New York, USA">New York, USA</option>
+        <option value="Tokyo, Japan">Tokyo, Japan</option>
+        <option value="Sydney, Australia">Sydney, Australia</option>
+        <option value="Cairo, Egypt">Cairo, Egypt</option>
+      </select>
+      <button id="fetchPlantsBtn">Show Plants</button>
+      <div id="apiStatus"></div>
+    </div>
+
+    <div id="plantsData">
+      <h3 id="regionTitle"></h3>
+      <ul id="plantsList"></ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>Data: Based on scientific sources (demo)</p>
+  </footer>
+
+  <script src="scientific-data.js"></script>
+</body>
+</html>
