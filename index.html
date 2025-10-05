@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA Bloom Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
+</head>
+<body>
+  <header>
+    <h1>NASA Bloom Tracker</h1>
+    <nav>
+      <a href="bloom-maps.html"> Season climate </a> <!-- Посилання на сторінку клімату -->
+      <a href="scientific-data.html"> Plants </a> <!-- Посилання на сторінку наукових даних -->
+      <img src="cap.png" alt="Capibara" class="Capibara" width="60" height="70">
+    </nav>
+  </header>
+
+  <main>
+    <div id="addLocationForm">
+      <h3>Add location</h3>
+<input type="number" id="latInput" placeholder="Latitude (lat, e.g., 50.45)" step="0.01">
+<input type="number" id="lonInput" placeholder="Longitude (lon, e.g., 30.52)" step="0.01">
+<input type="text" id="locationName" placeholder="Name (e.g., Kyiv)">
+
+      <button id="addBtn">Add location</button>
+      <div id="apiStatus"></div>
+    </div>
+
+    <div id="map"></div>
+    <div id="legend">
+      <p><span class="color-box low"></span> 0-0.3 (Low)</p>
+      <p><span class="color-box medium"></span> 0.3-0.6(Middle)</p>
+      <p><span class="color-box high"></span>0.6-1.0 (High)</p>
+    </div>
+    <canvas id="ndviChart"></canvas>
+    <button id="exportBtn">Export (CSV)</button>
+  </main>
+
+  <footer>
+    <p>Data: NASA MODIS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
