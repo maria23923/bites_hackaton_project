@@ -1,0 +1,380 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Arial', sans-serif;
+  margin: 0;
+  background: #f8f8f8;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #333, #555);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+header p {
+  margin: 4px 0;
+  font-size: 1em;
+}
+
+#addLocationForm {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+  opacity: 0;
+}
+
+#addLocationForm h3 {
+  margin: 0 0 15px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#addLocationForm input {
+  margin: 8px auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80%;
+  display: block;
+  transition: border 0.3s;
+}
+
+#addLocationForm input:focus {
+  border: 1px solid #333;
+}
+
+#addBtn {
+  padding: 8px 16px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  transition: background 0.3s;
+}
+
+#addBtn:hover {
+  background: #555;
+}
+
+#apiStatus {
+  font-size: 0.8em;
+  color: #666;
+  margin: 5px;
+  text-align: center;
+}
+
+#map {
+  height: 350px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease-in-out 1s forwards;
+  opacity: 0;
+}
+
+#legend {
+  width: 100%;
+  max-width: 800px;
+  margin: 10px auto;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.color-box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.color-box.low { background: #ff0000; }
+.color-box.medium { background: #ffff00; }
+.color-box.high { background: #00ff00; }
+
+canvas {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease-in-out 1.5s forwards;
+  opacity: 0;
+}
+
+#exportBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1em;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#exportBtn:hover {
+  background: #555;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.4em; }
+  header p { font-size: 0.9em; }
+  #map { height: 300px; }
+  canvas { width: 95%; }
+  #legend { flex-direction: column; gap: 10px; }
+  #addLocationForm input { width: 100%; }
+}
+.delete-btn {
+  padding: 4px 8px;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 0.8em;
+  transition: background 0.3s;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+}
+#seasonSelector {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+  opacity: 0;
+  text-align: center;
+}
+
+.season-btn {
+  padding: 8px 16px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background 0.3s;
+}
+
+.season-btn:hover {
+  background: #555;
+}
+
+.season-btn.active {
+  background: #4caf50;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+#climateForm {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+  opacity: 0;
+  text-align: center;
+}
+
+#climateForm input, #climateForm select {
+  margin: 8px auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80%;
+  display: block;
+  transition: border 0.3s;
+}
+
+#climateForm input:focus, #climateForm select:focus {
+  border: 1px solid #333;
+}
+
+#fetchClimateBtn {
+  padding: 8px 16px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  transition: background 0.3s;
+}
+
+#fetchClimateBtn:hover {
+  background: #555;
+}
+
+#climateData {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: none;
+}
+
+#climateTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#climateTable th, #climateTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#climateTable th {
+  background-color: #f2f2f2;
+}
+#climateForm button#scientificBtn {
+  float: right;
+  margin: 0 10px 10px 0;
+  padding: 8px 16px;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#climateForm button#scientificBtn:hover {
+  background: #388e3c;
+}
+
+/* Стилі для нової сторінки "Наукові дані" */
+#scientificForm {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease-in-out 0.5s forwards;
+  opacity: 0;
+  text-align: center;
+}
+
+#scientificForm input {
+  margin: 8px auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80%;
+  display: block;
+  transition: border 0.3s;
+}
+
+#scientificForm input:focus {
+  border: 1px solid #333;
+}
+
+#fetchPlantsBtn {
+  padding: 8px 16px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  transition: background 0.3s;
+}
+
+#fetchPlantsBtn:hover {
+  background: #555;
+}
+
+#plantsData {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: none;
+}
+
+#plantsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#plantsList li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1em;
+}
